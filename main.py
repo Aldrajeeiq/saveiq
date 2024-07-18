@@ -65,8 +65,8 @@ def progress(current, total, message, type):
 # start command
 @bot.on_message(filters.command(["start"]))
 def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
-	bot.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, I am Save Restricted Bot, I can send you restricted content by it's post link__\n\n{USAGE}",
-	reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🌐 Source Code", url="https://github.com/bipinkrish/Save-Restricted-Bot")]]), reply_to_message_id=message.id)
+	bot.send_message(message.chat.id, f"__👋 مـرحـبـا **{message.from_user.mention}**, ارسل لي الرابط __\n\n{USAGE}",
+	reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🌐 قناتنا", url="https://t.me/voicehesin")]]), reply_to_message_id=message.id)
 
 
 @bot.on_message(filters.text)
@@ -250,16 +250,16 @@ def get_message_type(msg: pyrogram.types.messages_and_media.message.Message):
 	except: pass
 
 
-USAGE = """**FOR PUBLIC CHATS**
+USAGE = """**اذا كانت القناة عامة ارسل هكذا**
 
 __just send post/s link__
 
-**FOR PRIVATE CHATS**
+**اذا كان القناة المقيدة خاصة**
 
 __first send invite link of the chat (unnecessary if the account of string session already member of the chat)
 then send post/s link__
 
-**FOR BOT CHATS**
+**اذا كان بوت مقيد**
 
 __send link with '/b/', bot's username and message id, you might want to install some unofficial client to get the id like below__
 
@@ -267,7 +267,7 @@ __send link with '/b/', bot's username and message id, you might want to install
 https://t.me/b/botusername/4321
 ```
 
-**MULTI POSTS**
+**ارسال الرسائل المقيدة في القناة بشكل كامل**
 
 __send public/private posts link as explained above with formate "from - to" to send multiple messages like below__
 
